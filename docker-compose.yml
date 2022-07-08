@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: mongo:4.4.3
+    environment:
+      - MONGO_PASSWORD=mongoroot
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    command: bash start.sh
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_PASSWORD=mongodb
+    volumes:
+      - .:/pet_anjo
+      - gems:/gems
+    depends_on:
+      - db
+
+volumes:
+  mongo-data:
+  gems:
