@@ -6,6 +6,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'shared_examples', '**', '*.rb')].each { |f| require f }
+
 
 RSpec.configure do |config|
   config.use_active_record = false
