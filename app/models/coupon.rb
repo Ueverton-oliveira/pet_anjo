@@ -14,4 +14,7 @@ class Coupon
   validates :discount_value, presence: true
   validates :max_use, presence: true
   validates :due_date, presence: true
+
+  enum status: { active:1,  inactive: 2 }
+
 end
