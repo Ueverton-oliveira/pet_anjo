@@ -48,6 +48,8 @@ gem 'mongoid'
 # authentication
 gem 'devise'
 
+gem 'i18n'
+
 # CORS
 gem 'rack-cors', '~> 1.1.1'
 
